@@ -115,6 +115,12 @@
       <th>Subject</th>
       <th>Grade</th>
     </tr>
+    <tr th:object="${grade}">
+      <td th:text="*{name}"></td>
+      <td th:text="*{subject}"></td>
+      <td th:text="*{grade}"></td>
+      <td><a class="update" href="/update">Update</a></td>
+    </tr>
   </table>
 </div>
 
