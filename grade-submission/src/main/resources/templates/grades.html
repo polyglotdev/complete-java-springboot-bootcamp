@@ -23,7 +23,7 @@
       <td th:text="*{grade.name}"></td>
       <td th:text="*{grade.subject}"></td>
       <td th:text="*{grade.grade}"></td>
-      <td><a class="update" href="/update">Update</a></td>
+      <td><a class="update" th:href="@{/(name = ${grade.name})}">Update</a></td>
     </tr>
   </table>
 </div>
