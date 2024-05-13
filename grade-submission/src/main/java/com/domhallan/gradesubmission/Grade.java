@@ -1,17 +1,16 @@
 package com.domhallan.gradesubmission;
 
+import java.util.UUID;
+
 public class Grade {
   private String name;
   private String subject;
-  private String grade;
+  private String score;
+  private String id;
 
-  public Grade(String name, String subject, String grade) {
-    this.name = name;
-    this.subject = subject;
-    this.grade = grade;
-  }
 
   public Grade() {
+    this.id = UUID.randomUUID().toString();
   }
 
   public String getName() {
@@ -30,11 +29,21 @@ public class Grade {
     this.subject = subject;
   }
 
-  public String getGrade() {
-    return grade;
+  public String getScore() {
+    return score;
   }
 
-  public void setGrade(String grade) {
-    this.grade = grade;
+  public void setScore(String score) {
+    this.score = score;
   }
+
+
+  public String getId() {
+    return this.id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
 }
