@@ -28,7 +28,7 @@ public class GradeController {
   }
 
   @PostMapping("/handleSubmit")
-  public String handleSubmit(Grade grade) {
+  public String submitForm(Grade grade) {
     studentGrades.add(grade);
     return "redirect:/grades";
   }
