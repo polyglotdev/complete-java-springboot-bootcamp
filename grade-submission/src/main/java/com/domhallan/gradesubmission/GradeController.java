@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,10 @@ public class GradeController {
   }
 
   @GetMapping("/")
-  public String gradeForm(Model model) {
-    model.addAttribute("grade", new Grade());
+  public String gradeForm(Model model, @RequestParam String name,
+                          @RequestParam String subject,
+                          @RequestParam String grade) {
+    model.addAttribute("grade", new Grade(name, subject, grade ));
     return "form";
   }
 
