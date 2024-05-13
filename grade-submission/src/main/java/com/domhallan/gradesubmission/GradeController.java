@@ -15,7 +15,6 @@ public class GradeController {
 
   @GetMapping("/grades")
   public String getGrades(Model model) {
-    Grade grade = new Grade("Harry", "Potions", "A");
     model.addAttribute("grades", studentGrades);
     return "grades";
   }
