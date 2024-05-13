@@ -11,15 +11,15 @@
 </div>
 <div class="container">
   <h2> Grade Portal </h2>
-  <form method="post">
+  <form method="post" th:object="${grade}">
     <label>
-      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Name" th:field="*{name}">
     </label>
     <label>
-      <input type="text" placeholder="Subject">
+      <input type="text" placeholder="Subject" th:field="*{subject}">
     </label>
     <label>
-      <input type="text" placeholder="Grade">
+      <input type="text" placeholder="Grade" th:field="*{grade}">
     </label>
     <br><br>
     <input type="submit" value="Submit">
