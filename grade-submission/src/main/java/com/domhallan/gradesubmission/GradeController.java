@@ -3,18 +3,15 @@ package com.domhallan.gradesubmission;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class GradeController {
 
-  List<Grade> studentGrades = Arrays.asList(
-    new Grade("Harry", "Potions", "A"),
-    new Grade("Hermione", "Transfiguration", "A"),
-    new Grade("Ron", "Divination", "D")
-  );
+  List<Grade> studentGrades = new ArrayList<>();
 
   @GetMapping("/grades")
   public String getGrades(Model model) {
@@ -25,8 +22,14 @@ public class GradeController {
 
   @GetMapping("/")
   public String gradeForm(Model model) {
-    model.addAttribute("grade", new Grade("Draco", "Defense Against the Dark Arts", "A"));
+    model.addAttribute("grade", new Grade());
 
     return "form";
+  }
+
+  @PostMapping("/handleSubmit")
+  public String handleSubmit(Grade grade) {
+    studentGrades.add(grade);
+    return "redirect:/grades";
   }
 }
